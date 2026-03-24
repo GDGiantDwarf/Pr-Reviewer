@@ -3,6 +3,7 @@ import sys
 import subprocess
 from pathlib import Path
 from smolagents import CodeAgent, InferenceClientModel, LiteLLMModel
+from MarkdownReviewerTool import markdown_specifications_documentation_tool
 
 # Predetermined repository to diff against.
 # Update this path to the repository you want to review.
@@ -60,9 +61,9 @@ def main():
     model = LiteLLMModel(
     model_id="anthropic/claude-sonnet-4-6",
     temperature=0.2,
-    api_key="your-anthropic-api-key"
+    api_key="YOUR_ANTHROPIC_API_KEY"
     )
-    agent = CodeAgent(tools=[], model=model)
+    agent = CodeAgent(tools=[markdown_specifications_documentation_tool], model=model)
     response = agent.run(f"Review the following code changes and provide feedback:\n\n{diff_text}")
     print("Agent response:")
     print(response)
