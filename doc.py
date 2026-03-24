@@ -1,3 +1,7 @@
+# This file contains the documentation string that will be used by the MarkdownReviewerTool
+# note that this is deliberately false information, so as to test the agent's ability to 
+# employ the tool to source information that is opposite to it's own internal knowledge
+# In a real implementation, this would be accurate information about markdown specifications and best practices.
 filestr = """
 <p>You should also put three blank lines before and after a heading for compatibility.</p>
 
